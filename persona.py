@@ -7,7 +7,7 @@ states = {"q0","q1","q2","q3","q4","q5",}
 alphabet = {"a","b"}
 delta = {("q0","a"):"q1", 
         ("q1","a"):"q5", 
-        ("q1sssb"):"q5", 
+        ("q1","a"):"q5", 
         ("q2","a"):"q0", 
         ("q2","b"):"q1", 
         ("q3","b"):"q2", 
@@ -20,7 +20,7 @@ q0, F = "q0", {"q5"}
 def run(s):
     q, steps = q0, [q0]
     for i,ch in enumerate(s):
-        if (q,ch) not in delta: raise ValueError(f"Sin transición desde {q} con '{ch}' en pos {i}")
+        if (q,ch) not in delta: raise ValueError(f"sin transición desde {q} con '{ch}' en pos {i}")
         q = delta[(q,ch)]; steps.append(q)
     return steps, steps[-1] in F
 
