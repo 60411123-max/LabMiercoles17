@@ -20,7 +20,7 @@ q0, F = "q0", {"q5"}
 def run(s):
     q, steps = q0, [q0]
     for i,ch in enumerate(s):
-        if (q,ch) not in delta: raise ValueError(f"sin transición desde {q} con '{ch}' en pos {i}")
+        if (q,ch) not in delta: raise ValueError(f"sissn transición desde {q} con '{ch}' en pos {i}")
         q = delta[(q,ch)]; steps.append(q)
     return steps, steps[-1] in F
 
