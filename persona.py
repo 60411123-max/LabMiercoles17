@@ -3,18 +3,18 @@ import sys, matplotlib.pyplot as plt, networkx as nx
 from matplotlib.patches import FancyArrowPatch
 
 # === Definición del DFA ===
-states = {"q0","q1","q2","q3","q4","q5"}
+states = {"q0","q1","q2","q3","q4","q5",}
 alphabet = {"a","b"}
 delta = {("q0","a"):"q1", 
-        ("q1","a"):"q4", 
-        ("q1","b"):"q5", 
+        ("q1","a"):"q5", 
+        ("q1sssb"):"q5", 
         ("q2","a"):"q0", 
         ("q2","b"):"q1", 
         ("q3","b"):"q2", 
-        ("q4","a"):"q1", 
-        ("q4","b"):"q3"}
+        ("q5","a"):"q1", 
+        ("q5","b"):"q3"}
 
-q0, F = "q0", {"q4"}
+q0, F = "q0", {"q5"}
 
 # === Simulación ===
 def run(s):
